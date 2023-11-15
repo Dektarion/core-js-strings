@@ -400,8 +400,15 @@ function findLongestWord(sentence) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  const arr = str.split(' ');
+  const newArr = arr.map((elem) => {
+    const interArr = elem.split('').reverse();
+    const interStr = interArr.join('');
+    return interStr;
+  });
+
+  return newArr.join(' ');
 }
 
 /**
@@ -415,8 +422,17 @@ function reverseWords(/* str */) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  const newStr = str.split("").map((char) => {
+    const upper = char.toUpperCase();
+    if (char === upper) {
+        return char.toLowerCase();
+    } else {
+        return upper;
+    }
+  }).join("");
+
+  return newStr;
 }
 
 /**
@@ -446,8 +462,8 @@ function getStringFromTemplate(firstName, lastName) {
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
  *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+function extractNameFromTemplate(value) {
+  return value.slice(7, value.length - 1);
 }
 
 /**
